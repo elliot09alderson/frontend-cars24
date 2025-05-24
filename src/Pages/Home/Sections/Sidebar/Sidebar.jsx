@@ -70,7 +70,7 @@ const Sidebar = () => {
   }, [debouncedFilter]);
 
   return (
-    <div className="">
+    <div className=" border-r border-gray-200 lg:pr-2">
       <div
         className=" flex items-center 
         justify-center  gap-4"

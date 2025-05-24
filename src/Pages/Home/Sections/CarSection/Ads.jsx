@@ -28,7 +28,7 @@ const Ads = () => {
           <input
             onChange={(e) => setSearch(e.target.value)}
             value={search}
-            className="w-full border-t border-gray-300 select-none outline-none lg:text-lg text-sm lg:text-sm font-semibold  h-12 rounded-l-xl  px-12"
+            className="w-full border-t border-gray-300 select-none outline-none text-sm lg:text-sm font-semibold  h-12 rounded-l-xl  px-12"
             type="text"
             placeholder="Search for your favourite cars Previous"
           />

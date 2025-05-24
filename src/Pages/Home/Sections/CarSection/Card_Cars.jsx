@@ -93,7 +93,7 @@ const CarList = () => {
     dispatch(clearMessage());
   }, [errorMessage, successMessage]);
   return (
-    <div className="flex  my-20 min-h-[76vh] items-center  overflow-y-scroll lg:flex-row flex-col lg:flex-wrap gap-20 ">
+    <div className="flex  my-20 min-h-[76vh]   overflow-y-scroll lg:flex-row flex-col lg:flex-wrap gap-20 ">
       {vehicles.map((vehicle, idx) => (
         <Link to={`/vehicle/detail/${vehicle.slug}`}>
           <Card_Cars key={vehicle._id + idx + "ASDADS"} vehicle={vehicle} />

@@ -33,9 +33,9 @@ const Login = () => {
         backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0) 70%), url(${home})`,
       }}
     >
-      <div className="absolute bottom-24 left-24 text-4xl text-white gap-12  w-full hidden lg:flex  ">
+      {/* <div className="absolute bottom-24 left-24 text-4xl text-white gap-12  w-full hidden lg:flex  ">
         <h1 className="lg:w-[600px] leading-14">
-          Hundereds of Users of Chhattisgarh used truck master to buy their
+          Hundereds of Users of Chhattisgarh used KARLO to buy their
           first Dream Four Wheeler.
         </h1>
         <div className="flex gap-5 items-center lg:w-[400px] justify-between font-semibold w-full text-lg mt-8 self-end">
@@ -43,14 +43,14 @@ const Login = () => {
           <div>Easy Purchase</div>
           <div>Powerful Dashboard</div>
         </div>
-      </div>
-      <div className="backdrop-blur-2xl  bg-white lg:absolute   h-full h-screen lg:h-[80vh] lg:w-[27vw]  right-4 items-center  lg:rounded-2xl p-10 flex flex-col gap-4 z-10 lg:px-16 px-8">
+      </div> */}
+      <div className="backdrop-blur-2xl  bg-white lg:absolute   h-screen lg:h-[80vh] lg:w-[27vw]  right-4 items-center  lg:rounded-2xl p-10 flex flex-col gap-4 z-10 lg:px-16 px-8">
         <div className="py-4 mt-20">
           <div className="flex flex-col gap-4">
             <img src={logo} alt="" className="h-14 w-28 mb-2" />
 
             <h1 className="text-gray-400 text-sm pb-2 racing">
-              Welcome to <span className="font-semibold">truck master</span>
+              Welcome to <span className="font-semibold">KARLO</span>
             </h1>
             <h1 className="text-black  text-2xl font-racing lg:text-3xl font-bold pb-12">
               Get started with your email or phone number
@@ -105,7 +105,7 @@ const Login = () => {
                 <button
                   type="submit"
                   disabled={loader}
-                  className="w-full px-8 h-14 racing uppercase tracking-widest lg:h-14 rounded-md border tracking-wide text-lg border-gray-300 bg-blue-600 text-white"
+                  className="w-full px-8 h-14 racing uppercase  lg:h-14 rounded-md border tracking-wide text-lg border-gray-300 bg-blue-600 text-white"
                 >
                   {loader ? "loading..." : "Submit"}
                 </button>

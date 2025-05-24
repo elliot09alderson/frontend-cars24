@@ -55,7 +55,7 @@ export const filterVehicle = createAsyncThunk(
   ) => {
     try {
       const { data } = await api.get(
-        `/vehicles/filter/?brand=${brand}&model=${model}&color=${color}&minPrice=${minPrice}&maxPrice=${maxPrice}&minKmDriven=${minKmDriven}&maxKmDriven=${maxKmDriven}&minYear=${minYear}&maxYear=${maxYear}&fuelType=${fuelType}&owners=${owners}&serialNo=${serialNo}&transmission=${transmission}&seater=${seater}`
+        `/vehicles/filter-data?brand=${brand}&model=${model}&color=${color}&minPrice=${minPrice}&maxPrice=${maxPrice}&minKmDriven=${minKmDriven}&maxKmDriven=${maxKmDriven}&minYear=${minYear}&maxYear=${maxYear}&fuelType=${fuelType}&owners=${owners}&serialNo=${serialNo}&transmission=${transmission}&seater=${seater}`
       );
       return fulfillWithValue(data);
     } catch (error) {

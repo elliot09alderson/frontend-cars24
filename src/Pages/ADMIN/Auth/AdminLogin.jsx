@@ -46,7 +46,7 @@ const AdminLogin = () => {
             <img src={logo} alt="" className="h-8 w-20 mb-2" />
 
             <h1 className="text-gray-400 text-sm pb-2">
-              Welcome to <span className="font-semibold">truck master</span>
+              Welcome to <span className="font-semibold">KARLO</span>
             </h1>
             <h1 className="text-black  text-3xl font-bold pb-8">
               Get started with your email or phone number

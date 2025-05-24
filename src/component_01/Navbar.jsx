@@ -43,8 +43,8 @@ const Navbar = () => {
     });
   }
   return (
-    <div className="flex lg:px-34 px-6 shadow-md border border-b fixed z-70 bg-white border-gray-100 border-r-0 w-full lg:h-20 h-16 ">
-      <div className="flex gap-2 items-center w-full  justify-between ">
+    <div className="flex lg:px-34 px-0 shadow-md border border-b fixed z-70 bg-white border-gray-100 border-r-0 w-full lg:h-20 h-16 ">
+      <div className="flex lg:gap-2 gap-0 items-center w-full  justify-center lg:justify-between ">
         <div className="cursor-pointer">
           <Link to={"/"}>
             <img className="lg:w-64 w-32  mt-1" src={logo} alt="" />
@@ -95,7 +95,7 @@ const Navbar = () => {
                 <img
                   src={userInfo.avatar}
                   onClick={() => setOpen(!open)}
-                  className="object-cover h-10 lg:w-10 rounded-full cursor-pointer"
+                  className="object-cover h-10 w-10 rounded-full cursor-pointer"
                 />
                 {open && (
                   <div
@@ -117,7 +117,7 @@ const Navbar = () => {
             <div className="flex  flex-row gap-4 cursor-pointer ">
               <div className="cursor-pointer  text-white">
                 <Link
-                  className="py-4 rounded-md px-8  bg-black"
+                  className="py-4 rounded-md px-6  bg-black"
                   to={"/register"}
                 >
                   {" "}
@@ -127,7 +127,7 @@ const Navbar = () => {
               <div className="cursor-pointer ">
                 <Link
                   to={"/login"}
-                  className="py-4 rounded-md px-8  text-black bg-white border hover:border-2  border-black"
+                  className="py-4 rounded-md px-6  text-black bg-white border hover:border-2  border-black"
                 >
                   {" "}
                   Log in

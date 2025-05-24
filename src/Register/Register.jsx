@@ -62,9 +62,9 @@ const Register = () => {
         backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 80%), url(${home})`,
       }}
     >
-      <div className="absolute bottom-24 left-24 text-4xl text-white gap-12  w-full hidden lg:flex  ">
+      {/* <div className="absolute bottom-24 left-24 text-4xl text-white gap-12  w-full hidden lg:flex  ">
         <h1 className="lg:w-[600px] leading-15">
-          Hundereds of Users of Chhattisgarh used Truck master to buy their
+          Hundereds of Users of Chhattisgarh used KARLO to buy their
           first Dream Car.
         </h1>
         <div className="flex gap-5 items-center lg:w-[400px] justify-between font-semibold w-full text-lg mt-8 self-end">
@@ -72,14 +72,14 @@ const Register = () => {
           <div>Easy Purchase</div>
           <div>Powerful Dashboard</div>
         </div>
-      </div>
+      </div> */}
       <div className="bg-white lg:absolute  h-full lg:h-[80vh] lg:w-[27vw]  right-4 items-center  lg:rounded-lg p-10 flex flex-col gap-4 z-10 lg:px-16 w-full">
         <div className=" pb-0  w-full ">
           <div className="flex flex-col gap-4">
-            <h1 className="text-gray-400 text-sm pb-8">
-              Welcome to <span className="font-semibold">truck master</span>
+            <h1 className="text-gray-400 text-sm pb-8 racing">
+              Welcome to <span className="font-semibold ">KARLO</span>
             </h1>
-            <h1 className="text-black text-xl font-racing  text-center lg:text-4xl font-semibold ">
+            <h1 className="text-black text-xl font-racing  text-center lg:text-3xl font-semibold ">
               Register to get Started
             </h1>
           </div>

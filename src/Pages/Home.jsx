@@ -200,8 +200,8 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="min-h-screen  2xl:px-[400px] xl:px-[200px] lg:px-[100px] my-40">
-          <div className=" xl:p-24 flex flex-col gap-20 xl:pb-72 rounded-3xl shadow-sm  px-4">
+        <div className=" 2xl:px-[400px] xl:px-[200px] lg:px-[100px] my-40">
+          <div className=" xl:p-24 flex flex-col gap-20 xl:pb-72  rounded-3xl shadow-md  px-4">
             <div className="flex flex-col items-center justifty-center ">
               <h1 className="py-5 xl:text-6xl lg:text-4xl  leading-20 text-center">
                 Powerful <span className="bg-[#fc2e00] px-2">lead</span>
@@ -212,7 +212,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="flex items-center flex-wrap justify-center lg:justify-between gap-20  ">
+            <div className="flex items-center flex-wrap justify-center  lg:justify-between gap-20  ">
               <div>
                 <h1 className="text-6xl py-4 text-center">50+</h1>
                 <p className="text-gray-400 text-center ">
@@ -230,7 +230,7 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-center  flex-wrap pb-20 justify-around">
+            <div className="flex items-center pb-20 lg:pb-0  flex-wrap justify-around">
               <div>
                 <h1 className="text-6xl py-4 text-center">X10</h1>
                 <p className="text-gray-400 text-center">
