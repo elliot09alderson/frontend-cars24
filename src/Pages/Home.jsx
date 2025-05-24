@@ -16,9 +16,37 @@ import vector3 from "/vectors/ve3ctor-4.jpg";
 import vector1 from "/vectors/vector1.jpg";
 import { Link } from "react-router-dom";
 import Requirement from "./Home/Sections/Requirement";
+import { useDispatch, useSelector } from "react-redux";
+import { customer_logout } from "../../rtk/slices/authSlice.js";
+import Swal from "sweetalert2";
 const Home = () => {
+  const { userInfo } = useSelector((slice) => slice.auth);
+  const dispatch = useDispatch();
+
+  function logout() {
+    Swal.fire({
+      title: "Are you sure ?",
+      text: "you will be redirected to login page",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, logout !",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "logout",
+          text: "logout successfully.",
+          icon: "success",
+        });
+
+        dispatch(customer_logout());
+      }
+      setOpen(false);
+    });
+  }
   return (
-    <div className="flex min-h-screen px-40 py-12   flex-col w-full">
+    <div className="flex min-h-screen lg:px:4 xl:px-40 py-12   flex-col w-full">
       <div className="rounded-4xl shadow-sm shadow-black flex flex-col ">
         <div className="flex  h-24 mt-8 items-center justify-between  px-12">
           <div className="flex gap-2">
@@ -29,17 +57,32 @@ const Home = () => {
           </div>
           <div className="flex gap-6   text-sm items-center">
             <Link
+              to="/agent/post/vehicle"
+              className="p-4 px-10 text-white rounded-xl text-xl bg-black cursor-pointer"
+            >
+              Sell
+            </Link>
+            <Link
               to="/ads"
               className="p-4 px-10 text-white rounded-xl text-xl bg-black cursor-pointer"
             >
               See Ads
             </Link>
-            <Link
-              to={"/login"}
-              className="p-4 px-10 text-gray-800 rounded-xl bg-gray-300 font-semibiold text-xl  cursor-pointer"
-            >
-              Login :
-            </Link>
+            {userInfo ? (
+              <div
+                className="p-4 px-10 text-gray-800 rounded-xl bg-gray-300 font-semibiold text-xl  cursor-pointer"
+                onClick={logout}
+              >
+                Logout :
+              </div>
+            ) : (
+              <Link
+                to={"/login"}
+                className="p-4 px-10 text-gray-800 rounded-xl bg-gray-300 font-semibiold text-xl  cursor-pointer"
+              >
+                Login :
+              </Link>
+            )}
           </div>
         </div>
         <div className="flex  w-full   h-full gap-14 py-20 px-30">

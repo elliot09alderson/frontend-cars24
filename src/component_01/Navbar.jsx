@@ -46,14 +46,16 @@ const Navbar = () => {
     <div className="flex lg:px-34 px-6 shadow-md border border-b fixed z-70 bg-white border-gray-100 border-r-0 w-full lg:h-20 h-16 ">
       <div className="flex gap-2 items-center w-full  justify-between ">
         <div className="cursor-pointer">
-          <img className="w-64  mt-1" src={logo} alt="" />
+          <Link to={"/"}>
+            <img className="w-64  mt-1" src={logo} alt="" />
+          </Link>
         </div>
         <div
           className={`lg:flex lg:gap-8 gap-4 hidden items-center  cursor-pointer`}
         >
           {financeData.map((item, idx) => (
             <Link key={idx + "link"} to={item.path}>
-              <div className="gap-2 cursor-pointer after:absolute after:block cursor-pointer after:bottom-5 w-fit  after:w-0 hover:after:w-32 after:duration-500 after:h-1 after:bg-[#fc2e00] after:content-[''] ">
+              <div className="gap-2 cursor-pointer after:absolute after:block  after:bottom-5 w-fit  after:w-0 hover:after:w-32 after:duration-500 after:h-1 after:bg-[#fc2e00] after:content-[''] ">
                 <p className="lg:text-lg text-xs text-[#0F0F26f]">
                   {item.text}
                 </p>
@@ -61,13 +63,30 @@ const Navbar = () => {
               </div>
             </Link>
           ))}
-
-          <div className="px-4 py-2 flex gap-4 items-center   ">
-            <h2>Call us on </h2>
-            <Phone color="green" />
+          <div
+            className="px-4 py-2 flex gap-4 rounded-xl bg-green-700 items-center text-white  "
+            onClick={() => {
+              window.location.href = "tel:+918770800807";
+            }}
+          >
+            <Phone color="white" />
             8770800807
           </div>
         </div>
+        {userInfo && userInfo.role == "agent" ? (
+          <div className="bg-black text-white lg:px-6 min-w-20 flex items-center justify-center py-4 cursor-pointer  rounded-xl mr-4">
+            <Link to={"/agent/myAds"}>
+              <div className="gap-2  ">
+                <p className="lg:text-lg w-fit text-xs text-[#0F0F26f]">
+                  my ads
+                </p>
+                {/* <ChevronDown className={`size-5 lg:flex hidden`} /> */}
+              </div>
+            </Link>
+          </div>
+        ) : (
+          <div></div>
+        )}
         <div className={`flex  gap-4 items-center justify-center`}>
           <div className="flex lg:gap-5 gap-3  cursor-pointer">
             {userInfo && <Heart className="size-10" />}
@@ -76,7 +95,7 @@ const Navbar = () => {
                 <img
                   src={userInfo.avatar}
                   onClick={() => setOpen(!open)}
-                  className="object-cover h-10 w-10 rounded-full cursor-pointer"
+                  className="object-cover h-10 w-16 lg:w-10 rounded-full cursor-pointer"
                 />
                 {open && (
                   <div
@@ -84,7 +103,7 @@ const Navbar = () => {
                     // onClick={() => setOpen(!open)}
                   >
                     <div className="px-4 py-2 border-b border-gray-300">
-                      profile
+                      <Link to={"/agent/myads"}>profile</Link>
                     </div>
                     <div className="px-4 py-2" onClick={logout}>
                       logout
@@ -95,15 +114,21 @@ const Navbar = () => {
             )}
           </div>
           {!userInfo && (
-            <div className="flex flex-col w-48  flex-row gap-4 cursor-pointer ">
+            <div className="flex  flex-row gap-4 cursor-pointer ">
               <div className="cursor-pointer  text-white">
-                <Link className="py-2 px-4  bg-red-500" to={"/register"}>
+                <Link
+                  className="py-4 rounded-md px-8  bg-black"
+                  to={"/register"}
+                >
                   {" "}
-                  Sign in
+                  Sign up
                 </Link>
               </div>
-              <div className="cursor-pointer">
-                <Link to={"/login"} className="py-2 px-4  text-red-500 border">
+              <div className="cursor-pointer ">
+                <Link
+                  to={"/login"}
+                  className="py-4 rounded-md px-8  text-black bg-white border hover:border-2  border-black"
+                >
                   {" "}
                   Log in
                 </Link>

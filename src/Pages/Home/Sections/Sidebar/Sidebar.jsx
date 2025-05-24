@@ -19,7 +19,7 @@ const Sidebar = () => {
   const [kms, setKms] = useState([5000, 500000]);
   const [seat, setSeat] = useState(undefined);
   const [priceAndYear, setPriceAndYear] = useState(false);
-  const [toggleFilter, setToggleFilter] = useState(false);
+  const [toggleFilter, setToggleFilter] = useState(true);
   const [localValues, setLocalValues] = React.useState([100000, 4000000]);
   const dispatch = useDispatch();
   // useEffect(() => {

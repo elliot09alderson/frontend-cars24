@@ -24,6 +24,7 @@ import LoginAgent from "./Pages/Agent/LoginAgent";
 import PublicAgentRouter from "./Pages/ProtectedRoutes/PublicAgentRouter";
 import VehicleDetails from "./Pages/Details/VehicleDetails";
 import Admin from "./Pages/Admin";
+import MyProfile from "./Pages/Agent/MyProfile";
 
 const App = () => {
   useEffect(() => {
@@ -49,7 +50,7 @@ const App = () => {
 
     if (successMessage) {
       toast.success(successMessage);
-      dispatch(messageClear());
+      // dispatch(messageClear());
     } else if (errorMessage) {
       toast.error(errorMessage);
       dispatch(messageClear());
@@ -120,7 +121,7 @@ const App = () => {
               children: [
                 {
                   index: true,
-                  // element: <MyProfile />,
+                  element: <MyProfile />,
                 },
               ],
             },
@@ -147,14 +148,6 @@ const App = () => {
                   path: "vehicle",
                   element: <PostVehicle />,
                 },
-                // {
-                //   path: "home",
-                //   element: <PostHome />,
-                // },
-                // {
-                //   path: "shop",
-                //   element: <PostShop />,
-                // },
               ],
             },
           ],
@@ -192,122 +185,6 @@ const App = () => {
       element: <NotFound />,
     },
   ]);
-
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <Home />,
-  //   },
-  //   {
-  //     path: "/agent",
-  //     children: [
-  //       {
-  //         element: <PublicAgentRouter />,
-  //         children: [
-  //           { path: "register", element: <RegisterAgent /> },
-  //           { path: "login", element: <LoginAgent /> },
-  //         ],
-  //       },
-
-  //       {
-  //         path: "myAds",
-
-  //         children: [
-  //           {
-  //             element: <PivateAgentRouter />,
-  //             children: [
-  //               {
-  //                 index: true,
-  //                 // element: <MyProfile />,
-  //               },
-  //             ],
-  //           },
-  //         ],
-  //       },
-
-  //       {
-  //         path: "post",
-
-  //         children: [
-  //           {
-  //             element: <PivateAgentRouter />,
-  //             children: [
-  //               {
-  //                 index: true,
-  //                 element: <PostVehicle />,
-  //               },
-  //             ],
-  //           },
-  //         ],
-  //       },
-  //     ],
-  //   },
-
-  //   {
-  //     path: "admin",
-  //     children: [
-  //       {
-  //         element: <PublicAdminRouter />,
-  //         children: [
-  //           {
-  //             path: "login",
-  //             element: <AdminLogin />,
-  //           },
-  //         ],
-  //       },
-
-  //       {
-  //         path: "",
-
-  //         children: [
-  //           {
-  //             element: <PrivateAdminRouter role={"admin"} />,
-  //             children: [
-  //               {
-  //                 path: "upload/ad",
-  //                 element: <PostAds />,
-  //               },
-  //               {
-  //                 path: "upload/vehicle",
-  //                 element: <PostVehicle />,
-  //               },
-  //             ],
-  //           },
-  //         ],
-  //       },
-  //     ],
-  //   },
-
-  //   {
-  //     path: "/ads",
-  //     element: <Ads />,
-  //   },
-
-  //   {
-  //     path: "/detail",
-  //     element: <Hondacity />,
-  //   },
-
-  //   {
-  //     path: "/",
-  //     element: <PublicRoute />,
-  //     children: [
-  //       {
-  //         path: "login",
-  //         element: <Login />,
-  //       },
-
-  //       {
-  //         path: "register",
-  //         element: <Register />,
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     path: "*",
-  //     element: <NotFound />,
-  //   },
-  // ]);
 
   return (
     <div>

@@ -12,12 +12,23 @@ import key from "/public/image/key.jpg";
 import rto from "/public/image/rto.jpg";
 import insurance1 from "/public/image/insurance.jpg";
 import insurance from "/public/image/insurance_type.jpg";
+import { useSelector } from "react-redux";
 
 const Car_overview = ({ data }) => {
   const [updown, setUpDown] = useState(true);
-
+  const { userInfo } = useSelector((slice) => slice.auth);
+  console.log(userInfo);
   return (
-    <div className="flex gap-3  lg:gap-4 px-2 lg:px-6  py-6  flex-col lg:w-[650px] shadow-xl  rounded-2xl h-auto">
+    <div
+      className={`flex gap-3  lg:gap-4 px-2 lg:px-6  py-6  flex-col lg:w-[650px]  relative shadow-xl  rounded-2xl h-auto `}
+    >
+      {!userInfo && (
+        <div
+          className={`
+         
+         h-[400px] z-40 select-none pointer-events-none shadow-xl rounded-2xl w-full absolute top-0 left-0 backdrop-blur-sm`}
+        ></div>
+      )}
       <div className="flex px-4 lg:px-0 justify-between">
         <p className="text-xl font-semibold"> Car overview</p>
         <ChevronDown

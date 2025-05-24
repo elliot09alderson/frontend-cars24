@@ -18,9 +18,9 @@ export const fetchVehicles = createAsyncThunk(
 
 export const addVehicle = createAsyncThunk(
   "vehicles/add_vehicle",
-  async ({ values }, { rejectWithValue, fulfillWithValue }) => {
+  async (values, { rejectWithValue, fulfillWithValue }) => {
     try {
-      const { data } = await api.post("/vehicle", values);
+      const { data } = await api.post("/agent/vehicle", values);
       return fulfillWithValue(data);
     } catch (error) {
       const errorData = error.response?.data || {
@@ -94,6 +94,20 @@ export const fetchVehicleDetail = createAsyncThunk(
     }
   }
 );
+export const deleteVehicle = createAsyncThunk(
+  "vehicles/deleteVehicle",
+  async (slug, { rejectWithValue, fulfillWithValue }) => {
+    try {
+      const { data } = await api.delete(`/vehicles/${slug}`);
+      return fulfillWithValue(data);
+    } catch (error) {
+      const errorData = error.response?.data || {
+        message: "Something went wrong",
+      };
+      return rejectWithValue(errorData);
+    }
+  }
+);
 
 const vehicleSlice = createSlice({
   name: "vehicle",
@@ -157,6 +171,20 @@ const vehicleSlice = createSlice({
         state.loading = true;
       })
       .addCase(addVehicle.rejected, (state, { payload }) => {
+        state.errorMessage = payload.error;
+        state.loading = false;
+      })
+      .addCase(deleteVehicle.fulfilled, (state, { payload }) => {
+        state.vehicles = state.vehicles.filter(
+          (item) => item.slug != state.data
+        );
+        state.successMessage = payload.message;
+        state.loading = false;
+      })
+      .addCase(deleteVehicle.pending, (state, { payload }) => {
+        state.loading = true;
+      })
+      .addCase(deleteVehicle.rejected, (state, { payload }) => {
         state.errorMessage = payload.error;
         state.loading = false;
       })

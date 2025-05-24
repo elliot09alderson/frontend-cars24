@@ -4,10 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { FaUserPlus } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  agent_register,
-  customer_register,
-} from "../../../rtk/slices/authSlice";
+import { agent_register } from "../../../rtk/slices/authSlice";
 
 import logo from "/logo/karlo.png";
 import { ArrowLeft } from "lucide-react";
@@ -52,6 +49,7 @@ const RegisterAgent = () => {
   };
 
   // useEffect(() => {
+    
   //   navigate("/agent/login");
   // }, [successMessage]);
   return (
@@ -63,8 +61,8 @@ const RegisterAgent = () => {
     >
       <div className="absolute bottom-24 left-24 text-4xl text-white   w-full hidden lg:flex  ">
         <h1 className="lg:w-[600px]">
-          Hundereds of Users of Chhattisgarh used Jameen Kharido to buy their
-          first Dream Home.
+          Hundereds of Users of Chhattisgarh used Karlo to buy their first Dream
+          Home.
         </h1>
         <div className="flex gap-5 items-center lg:w-[400px] justify-between font-semibold w-full text-lg mt-8 self-end">
           <div>1000+ Active and Trusted Ads</div>
@@ -76,7 +74,7 @@ const RegisterAgent = () => {
         <div className="lg:py-4 py-0 ">
           <div className="flex flex-col gap-4">
             <h1 className="text-gray-400 text-sm pb-2">
-              Welcome to <span className="font-semibold">jameen kharido</span>
+              Welcome to <span className="font-semibold">Karlo</span>
             </h1>
             <h1 className="text-black  lg:text-3xl text-2xl font-bold pb-2">
               Get started with your email or phone number

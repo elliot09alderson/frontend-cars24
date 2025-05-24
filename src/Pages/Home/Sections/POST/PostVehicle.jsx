@@ -3,7 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import truck from "/logo/truck.png";
+import karlo from "/logo/karlo.png";
+import { addVehicle } from "../../../../../rtk/slices/vehicleSlice";
+import { messageClear } from "../../../../../rtk/slices/authSlice";
+import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 const VehicleSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
   serialNo: Yup.string().required("Serial No is required"),
@@ -30,7 +34,19 @@ const PostVehicle = () => {
   const [images, setImages] = useState([]);
   const [previewImages, setPreviewImages] = useState([]);
   const [loader, setLoader] = useState(false);
-
+  const dispatch = useDispatch();
+  const { successMessage, errorMessage } = useSelector(
+    (slice) => slice.vehicle
+  );
+  useEffect(() => {
+    if (successMessage) {
+      toast.success(successMessage);
+      dispatch(messageClear());
+    } else if (errorMessage) {
+      toast.error(errorMessage);
+      dispatch(messageClear());
+    }
+  }, [successMessage, errorMessage]);
   const handleImageChange = (event, setFieldValue) => {
     const files = Array.from(event.target.files);
     const previews = files.map((file) => URL.createObjectURL(file));
@@ -52,17 +68,15 @@ const PostVehicle = () => {
     setLoader(true);
     Object.entries(values).forEach(([key, val]) => {
       if (key === "images") {
-        val.forEach((img) => formData.append("images", img));
+        val.forEach((img) => formData.append("vehicleimages", img));
       } else {
         formData.append(key, val);
       }
     });
 
     // You can now send `formData` to backend with fetch or axios
-    setTimeout(() => {
-      console.log("Submitted", values);
-      setLoader(false);
-    }, 2000);
+    dispatch(addVehicle(formData));
+    setLoader(false);
   };
 
   return (
@@ -90,11 +104,17 @@ const PostVehicle = () => {
       >
         {({ setFieldValue, errors }) => (
           <Form className="space-y-4">
-            <div className="flex justify-center gap-8 ">
+            <div className="flex justify-between items-center gap-8 ">
               <h1 className="text-6xl racing  uppercase font-bold my-8 text-center">
                 Add Vehicle
               </h1>
-              <img src={truck} className="w-40" alt="" />
+              <img src={karlo} className="w-40 flex self-end" alt="" />
+              <Link to={"/agent/myads"}>
+                <div className="px-8 py-3 bg-black text-white text-lg border-none h-fit rounded-md cursor-pointer">
+                  {" "}
+                  All Ads
+                </div>
+              </Link>
             </div>
 
             {/* Reusable input field */}

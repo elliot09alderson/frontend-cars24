@@ -58,7 +58,8 @@ export const agentReducer = createSlice({
   initialState: {
     loader: false,
     agentInfo: null,
-    adsInfo: [],
+    vehiclesAd: [],
+    myAds: [],
     documentInfo: null,
     errorMessage: "",
     successMessage: "",
@@ -128,7 +129,7 @@ export const agentReducer = createSlice({
       .addCase(agent_myads.fulfilled, (state, { payload }) => {
         state.successMessage = "Agent details fetched successfully!";
         state.loader = false;
-        state.adsInfo = payload?.data; // Set the AgentInfo to payload directly
+        state.myAds = payload?.data; // Set the AgentInfo to payload directly
       });
   },
 });

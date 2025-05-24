@@ -39,8 +39,8 @@ const LoginAgent = () => {
       <div className=" hidden lg:flex absolute bottom-24 left-24 text-4xl  text-white md:w-[400px] lg:w-full w-full  ">
         <div className="absolute bottom-0 left-20 text-4xl text-white gap-12  w-full hidden lg:flex  ">
           <h1 className="lg:w-[600px]">
-            Hundereds of Users of Chhattisgarh used Jameen Kharido to buy their
-            first Dream Home.
+            Hundereds of Users of Chhattisgarh used Karlo to buy their first
+            Dream Home.
           </h1>
           <div className="flex gap-5 items-center lg:w-[400px] justify-between font-semibold w-full text-lg  self-end">
             <div>1000+ Active and Trusted Ads</div>
@@ -55,7 +55,7 @@ const LoginAgent = () => {
             <img src={logo} alt="" className="w-32 mb-2" />
 
             <h1 className="text-gray-400 text-sm pb-2 hidden lg:block">
-              Welcome to <span className="font-semibold">jameen kharido</span>
+              Welcome to <span className="font-semibold">Karlo</span>
             </h1>
             <h1 className="text-black  text-2xl lg:text-3xl font-bold pb-12">
               Login to upload Ad
@@ -82,7 +82,7 @@ const LoginAgent = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full pl-4 bg-white focus:ring-fuchsia-600 focus:ring-2 h-12 lg:h-10  rounded-md border border-gray-300 focus:outline-none"
+                    className="w-full pl-4 bg-white focus:ring-fuchsia-600 focus:ring-2 h-12 lg:h-12  rounded-md border border-gray-300 focus:outline-none"
                     placeholder="Enter your email"
                   />
                   <ErrorMessage
@@ -97,7 +97,7 @@ const LoginAgent = () => {
                   <Field
                     type="password"
                     id="password"
-                    className="w-full pl-4  focus:ring-fuchsia-600 focus:ring-2 h-12 lg:h-10  rounded-md border border-gray-300 focus:outline-none"
+                    className="w-full pl-4  focus:ring-fuchsia-600 focus:ring-2 h-12 lg:h-12  rounded-md border border-gray-300 focus:outline-none"
                     name="password"
                     placeholder="Enter your password"
                   />
@@ -111,8 +111,8 @@ const LoginAgent = () => {
 
                 <button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="w-full px-8 lg:h-10 h-12 mt-4 rounded-md border tracking-wide text-lg  border-gray-300 bg-blue-600 text-white"
+                  // disabled={isSubmitting}
+                  className="w-full px-8 lg:h-12 h-12 mt-4 rounded-md border tracking-wide text-lg  border-gray-300 bg-blue-600 text-white"
                 >
                   Submit
                 </button>

@@ -31,8 +31,8 @@ const AdminLogin = () => {
     >
       <div className="absolute bottom-24 left-24 text-4xl text-white w-[700px] ">
         <h1>
-          Hundereds of Users of Chhattisgarh used Jameen Kharido to buy their
-          first Dream Home.
+          Hundereds of Users of Chhattisgarh used Karlo to buy their first Dream
+          Home.
         </h1>
         <div className="flex gap-5 items-center justify-between font-semibold text-lg mt-8">
           <div>100+ Payment Methods</div>

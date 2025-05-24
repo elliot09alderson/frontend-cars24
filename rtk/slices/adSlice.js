@@ -32,6 +32,7 @@ export const postad = createAsyncThunk(
 const adSlice = createSlice({
   name: "ad",
   initialState: {
+    activeSidebar: 0,
     ads: [],
     loading: false,
     errorMessage: "",
@@ -40,6 +41,9 @@ const adSlice = createSlice({
   reducers: {
     clearMessage: (state) => {
       (state.errorMessage = ""), (state.successMessage = "");
+    },
+    seActiveSidebar: (state, { payload }) => {
+      state.activeSidebar = payload;
     },
   },
 
@@ -73,4 +77,4 @@ const adSlice = createSlice({
 });
 export default adSlice.reducer;
 
-export const { clearMessage } = adSlice.actions;
+export const { clearMessage, seActiveSidebar } = adSlice.actions;

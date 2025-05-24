@@ -13,7 +13,7 @@ import { formatNumberWithCommas } from "../../../../lib/utils.js";
 
 const Card_Cars = ({ vehicle }) => {
   return (
-    <div className=" w-[320px] lg:w-[300px] cursor-pointer h-[325px] shadow border overflow-hidden border-gray-300 rounded-xl">
+    <div className=" w-[320px] lg:w-[300px] cursor-pointer  shadow border overflow-hidden border-gray-300 rounded-xl">
       <div className="bg-linear-to-b from-[#D9E0E4] to-white   rounded-t-xl p-2">
         <img
           src={vehicle?.images[0]}
