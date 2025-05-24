@@ -82,7 +82,7 @@ const MyProfile = () => {
             <div
               onClick={() => dispatch(seActiveSidebar(idx))}
               className={` ${
-                activeSidebar == idx && " border bg-gray-100"
+                activeSidebar == idx && "  bg-gray-200"
               } p-4 flex   hover:bg-gray-100 items-center gap-3 rounded-md  cursor-pointer  text-xl font-lg`}
             >
               <img
@@ -163,10 +163,11 @@ const MyProfile = () => {
                 />
                 <h1>{item?.name}</h1>
               </div>
-            ))}     
+            ))}
           </div>
           <div
-            onClick={() => {              dispatch(seActiveSidebar(9));
+            onClick={() => {
+              dispatch(seActiveSidebar(9));
 
               Swal.fire({
                 title: "Are you sure ?",

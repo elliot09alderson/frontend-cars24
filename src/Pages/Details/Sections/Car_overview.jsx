@@ -13,6 +13,7 @@ import rto from "/public/image/rto.jpg";
 import insurance1 from "/public/image/insurance.jpg";
 import insurance from "/public/image/insurance_type.jpg";
 import { useSelector } from "react-redux";
+import { formatNumberWithCommas } from "../../../lib/utils";
 
 const Car_overview = ({ data }) => {
   const [updown, setUpDown] = useState(true);
@@ -78,7 +79,7 @@ const Car_overview = ({ data }) => {
                 <div className="flex flex-col">
                   <p className="text-[#B0B0B0] text-xs">KM driven</p>
                   <p className="lg:text-lg text-sm font-semibold">
-                    {data?.totalKmDriven} km
+                    {formatNumberWithCommas(data?.totalKmDriven)} km
                   </p>
                 </div>
               </div>

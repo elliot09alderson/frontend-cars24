@@ -13,6 +13,7 @@ import {
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { postRequirement } from "../../../../rtk/slices/customerSlice";
+import { PhoneCall } from "lucide-react";
 const Requirement = () => {
   // Form validation schema using Yup
   const validationSchema = Yup.object().shape({
@@ -25,10 +26,13 @@ const Requirement = () => {
       .min(Yup.ref("fromDate"), "End date must be after start date"),
     budget: Yup.number()
       .required("Budget is required")
-      .min(100, "Budget must be at least $100"),
+      .min(100, "Budget must be at least ₹100"),
     description: Yup.string()
       .required("Description is required")
       .min(20, "Description must be at least 20 characters"),
+    phoneNumber: Yup.string()
+      .required("Phone Number is required")
+      .min(10, "Phonenumber must be at least 10 characters"),
   });
   const dispatch = useDispatch();
   const { loading, requirements } = useSelector((slice) => slice.customer);
@@ -40,6 +44,7 @@ const Requirement = () => {
       toDate: "",
       budget: "",
       description: "",
+      phoneNumber: "",
     },
     validationSchema,
     onSubmit: (values, { resetForm }) => {
@@ -74,7 +79,7 @@ const Requirement = () => {
       }
       dispatch(postRequirement(values)).then(() => {
         toast.success("requirement sumited");
-        //   resetForm();
+        resetForm();
       });
       // Reset the form after submission
     },
@@ -87,11 +92,11 @@ const Requirement = () => {
         <img
           src={mercedes}
           alt=""
-          className="w-[464px] relative z-10  rounded-l-xl"
+          className="lg:w-[464px]  w-[300px] relative z-10 hidden lg:block rounded-l-xl"
         />
         <div className="p-10 border-gray-300 border z-10 rounded-r-xl bg-white shadow-md ">
           <div className="text-center flex flex-col gap-2 my-6">
-            <h2 className="text-4xl font-bold text-gray-800">
+            <h2 className="lg:text-4xl text-2xl font-bold text-gray-800">
               Finding the best deal in market ?
             </h2>
             <p className="mt-2 text-gray-600">
@@ -100,7 +105,10 @@ const Requirement = () => {
             </p>
           </div>
 
-          <form onSubmit={formik.handleSubmit} className="space-y-6 w-[800px]">
+          <form
+            onSubmit={formik.handleSubmit}
+            className="space-y-6 lg:w-[800px] w-[350px]"
+          >
             {/* Car Model Field */}
             <div>
               <label
@@ -189,7 +197,34 @@ const Requirement = () => {
                 ) : null}
               </div>
             </div>
-
+            <div>
+              <label
+                htmlFor="phoneNumber"
+                className="block text-sm font-medium text-gray-700"
+              >
+                phoneNumber
+              </label>
+              <div className="mt-1 relative rounded-md shadow-sm">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <PhoneCall className="h-5 w-5 text-gray-400" />
+                </div>
+                <input
+                  type="number"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.phoneNumber}
+                  className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  placeholder="8770800807"
+                />
+              </div>
+              {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
+                <p className="mt-2 text-sm text-red-600">
+                  {formik.errors.phoneNumber}
+                </p>
+              ) : null}
+            </div>
             {/* Budget Field */}
             <div>
               <label

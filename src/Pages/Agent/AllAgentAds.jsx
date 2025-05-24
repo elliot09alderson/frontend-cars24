@@ -13,9 +13,11 @@ const AllAgentAds = () => {
   console.log(myAds);
   return (
     <div className="xl:px-24">
-      <h1 className="text-5xl py-5 text-center">Agent Ads</h1>
+      <h1 className="text-5xl py-5 drop-shadow-lg text-center racing uppercase">
+        Agent Ads
+      </h1>
 
-      <div className="my-24 flex items-center justify-center">
+      <div className="my-20 flex items-center justify-center overflow-y-scroll">
         {myAds?.map((item, idx) => (
           <Link key={item.slug + idx} to={`/vehicle/detail/${item.slug}`}>
             <div className="flex relative flex-col gap-4 w-[340px] bg-slate-800 hover:bg-slate-700 group duration-500 cursor-pointer text-white items-center p-4 rounded-xl justify-center">
@@ -32,7 +34,7 @@ const AllAgentAds = () => {
                 alt={item.slug}
               />
               <div className="">₹ {formatNumberWithCommas(item.price)}</div>
-              <div className="bg-slate-900 group-hover:bg-slate-800 py-4 w-full rounded-md text-white flex flex-wrap items-center justify-between px-4">
+              <div className="bg-slate-900 backdrop-blur-xl group-hover:bg-slate-800 py-4 w-full rounded-md text-white flex flex-wrap items-center justify-between px-4">
                 <div className="flex divide-y divide-gray-400 flex-col gap-2 text-xs">
                   <div>{item.brand}</div>
                   <div>{item.year}</div>

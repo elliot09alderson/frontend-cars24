@@ -47,7 +47,7 @@ const Navbar = () => {
       <div className="flex gap-2 items-center w-full  justify-between ">
         <div className="cursor-pointer">
           <Link to={"/"}>
-            <img className="w-64  mt-1" src={logo} alt="" />
+            <img className="lg:w-64 w-32  mt-1" src={logo} alt="" />
           </Link>
         </div>
         <div
@@ -95,7 +95,7 @@ const Navbar = () => {
                 <img
                   src={userInfo.avatar}
                   onClick={() => setOpen(!open)}
-                  className="object-cover h-10 w-16 lg:w-10 rounded-full cursor-pointer"
+                  className="object-cover h-10 lg:w-10 rounded-full cursor-pointer"
                 />
                 {open && (
                   <div

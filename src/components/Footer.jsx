@@ -125,7 +125,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex lg:flex-row gap-12 flex-col lg:px-20   py-6 ">
+      <div className="flex lg:flex-row gap-12 flex-col lg:px-20  lg:text-xl   text-sm py-6 ">
         <div className="flex lg:w-1/3 items-center lg:items-start flex-col  lg:border-r gap-6">
           <p className="text-white font-medium ">
             Download OYO app for exciting offers.
@@ -165,7 +165,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex lg:flex-row flex-col lg:justify-between gap-8  border-t px-16 lg:px-20 text-sm   text-white  py-12">
+      <div className="flex lg:flex-row flex-col lg:text-xl    lg:justify-between gap-8  border-t px-16 lg:px-20 text-sm   text-white  py-12">
         {data.map((item, idx) => {
           return (
             <div key={idx} className="flex flex-col font-bold gap-3">

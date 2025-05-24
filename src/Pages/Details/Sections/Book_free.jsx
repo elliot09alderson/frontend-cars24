@@ -15,7 +15,7 @@ const Book_free = ({ data }) => {
               {formatNumberWithCommas(data?.name)}
             </p>
             {userInfo?.role == "agent" && (
-              <div className="h-8 w-fit px-4 flex items-center justify-center text-white bg-red-500 rounded-full text-xs absolute bottom-30 left-5 xl:left-60">
+              <div className="h-8 w-fit px-4 flex items-center justify-center text-white bg-red-500 rounded-full text-xs  lg:top-10 absolute xl:top-10 bottom-30 left-5 xl:left-60">
                 {data.commision}% commison included
               </div>
             )}

@@ -58,7 +58,7 @@ const Card_Cars = ({ vehicle }) => {
       <div className="flex px-2 justify-between py-2">
         <div className="flex gap-2 bg-[#F5F5F5] p-1 px-2 rounded-sm items-center">
           <img className="size-4" src={checklist} alt="" />
-          <p className="text-[#7E7F7F] text-xs font-semibold">CARS24 Assured</p>
+          <p className="text-[#7E7F7F] text-xs font-semibold">KARLO Assured</p>
         </div>
         <div className="flex gap-1 bg-[#FEF4EC] p-1 px-1 rounded-xl items-center">
           <img className="size-4" src={autonaut} alt="" />
@@ -93,7 +93,7 @@ const CarList = () => {
     dispatch(clearMessage());
   }, [errorMessage, successMessage]);
   return (
-    <div className="flex  my-20 min-h-[76vh] overflow-y-scroll lg:flex-row flex-col lg:flex-wrap gap-20 ">
+    <div className="flex  my-20 min-h-[76vh] items-center  overflow-y-scroll lg:flex-row flex-col lg:flex-wrap gap-20 ">
       {vehicles.map((vehicle, idx) => (
         <Link to={`/vehicle/detail/${vehicle.slug}`}>
           <Card_Cars key={vehicle._id + idx + "ASDADS"} vehicle={vehicle} />

@@ -54,11 +54,11 @@ const PostAds = () => {
         className="
       flex items-center justify-center min-h-screen  "
       >
-        <div className="py-12 w-[500px] shadow-md shadow-blue-300 rounded-xl p-10">
-          <h2 className="text-4xl font-semibold text-center mb-12 text-gray-800">
+        <div className="py-12 lg:w-[500px]  rounded-xl  shadow-md shadow-blue-300 p-10 ">
+          <h2 className="text-4xl drop-shadow-xl font-semibold text-center mb-12 text-gray-800">
             Upload a new Ad
           </h2>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6  rounded-xl">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Upload Image:

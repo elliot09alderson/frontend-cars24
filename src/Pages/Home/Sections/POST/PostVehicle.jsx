@@ -104,11 +104,11 @@ const PostVehicle = () => {
       >
         {({ setFieldValue, errors }) => (
           <Form className="space-y-4">
-            <div className="flex justify-between items-center gap-8 ">
-              <h1 className="text-6xl racing  uppercase font-bold my-8 text-center">
+            <div className="flex justify-between items-center gap-8 flex-col mb-12 lg:mb-0 lg:flex-row">
+              <h1 className="text-6xl racing  uppercase font-bold lg:my-8 my-0 text-center">
                 Add Vehicle
               </h1>
-              <img src={karlo} className="w-40 flex self-end" alt="" />
+              <img src={karlo} className="w-40 lg:flex hidden" alt="" />
               <Link to={"/agent/myads"}>
                 <div className="px-8 py-3 bg-black text-white text-lg border-none h-fit rounded-md cursor-pointer">
                   {" "}

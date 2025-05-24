@@ -44,7 +44,7 @@ const Footer = () => {
 
   return (
     <>
-      <div className="lg:w-full  lg:px-54 border-t border-gray-300 pt-12 px-6 lg:pt-2 py-6 lg:pt-12  lg:h-[600px] bg-linear-to-t from-[#F0FFF7] to-[#FAFFF5]">
+      <div className="lg:w-full text-sm lg:text-xl  lg:px-54 border-t border-gray-300 pt-12 px-6  py-6 lg:pt-12  lg:h-[600px] bg-linear-to-t from-[#F0FFF7] to-[#FAFFF5]">
         <div className="flex justify-start items-center gap-3  ">
           <img className="lg:w-64 w-32 " src={logo} alt="Company Logo" />
           <p className="lg:text-xl text-lg text-[#465166] font-semibold border-l-2 pl-3">
@@ -62,7 +62,7 @@ const Footer = () => {
                 {item.subheading.map((subItem, subIdx) => (
                   <p
                     key={subIdx + "subheading"}
-                    className="text-gray-500  font-medium text-lg hover:text-black cursor-pointer"
+                    className="text-gray-500  font-medium lg:text-lg text-sm hover:text-black cursor-pointer"
                   >
                     {subItem}
                   </p>
@@ -71,10 +71,10 @@ const Footer = () => {
             </div>
           ))}
           <div className=" flex flex-col gap-4">
-            <h1 className="text-lg font-semibold uppercase mt-4">
+            <h1 className="text-lg font-semibold uppercase mt-8">
               Social Links
             </h1>
-            <div className="flex gap-4 mt-6">
+            <div className="flex gap-4  lg:mt-2">
               <img
                 className=" cursor-pointer"
                 src="https://cdn.cars24.com/qa/cms/2025/01/28/20bc036d-1141-4ebd-8d20-7b1375870066facebook.png"
